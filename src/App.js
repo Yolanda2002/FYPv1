@@ -1,24 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import {Button} from "antd-mobile";
+import {Route, Router, Routes} from "react-router-dom";
+import Bookes from "./pages/books";
+import Recommendations from "./pages/Recommendations";
+import Login from "./pages/Login";
+import Reg from "./pages/Reg";
+import Setting from "./pages/Setting";
+import Chat from "./pages/Chat";
+import UserInfo from "./pages/Setting/UserInfo";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+        <Routes>
+            <Route path="/" element={<Login/>} />
+            <Route path="/reg" element={<Reg/>} />
+            <Route path="/books" element={<Bookes/>} />
+            <Route path="/setting" element={<Setting/>} />
+            <Route path="/chat" element={<Chat/>} />
+            <Route path='/userInfo' element={<UserInfo/>}/>
+            <Route path="/recommendations" element={<Recommendations/>} />
+        </Routes>
   );
 }
 
